@@ -1,25 +1,37 @@
+import React from "react";
 import logo from './logo.svg';
 import './App.css';
+import Greeting from './Greeting';
+import Button from "./Components/Button/Button"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+
+    constructor(){
+      super()
+      this.username = "James"
+      
+
+    }
+
+
+  
+
+
+    render(){
+
+      return (
+        <div className="App">
+          <header className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <Greeting personname={this.username} age='12' height='5.2' email='james@email.com'>Hello everyone</Greeting>
+          
+            <Button/>
+          </header>
+        </div>
+      );
+
+    }
+
 }
 
-export default App;
+export default App
